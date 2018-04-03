@@ -3,5 +3,9 @@
 ## Use
 
 ```
-$ npm install
 $ npm run start
+
+## Install
+
+```
+$ npm install
