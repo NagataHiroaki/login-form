@@ -1,0 +1,3 @@
+# 除外設定
+dist/
+node_modules/
