@@ -1,5 +1,4 @@
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-// const StyleLintPlugin = require('stylelint-webpack-plugin');
 const webpack = require('webpack');
 const PATH = require('path');
 
@@ -7,7 +6,6 @@ const SCSS_PATH = PATH.join(__dirname, './src/scss');
 const CSS_PATH = PATH.join(__dirname, './dist/common/css');
 const TS_PATH = PATH.join(__dirname, './src/ts');
 const JS_PATH = PATH.join(__dirname, './dist/common/js');
-// const JS_DIST_PATH = PATH.join(__dirname, './dist/common/js');
 const JS_DIST_PATH = PATH.join(__dirname, './');
 
 
@@ -25,8 +23,22 @@ module.exports = [
 				{
 					test: /.scss$/,
 					use: ExtractTextPlugin.extract({
-						// use: ["css-loader", "sass-loader"]
-						use: ["css-loader",　"postcss-loader", "sass-loader"]
+            use: [
+              {
+                loader: "css-loader"
+              },
+              {
+                loader: "postcss-loader"
+              },
+              {
+                loader: "sass-loader",
+                options: {
+                  includePaths: [
+                    PATH.join(PATH.dirname(module.filename), 'node_modules')
+                  ]
+                }
+              }
+            ]
 					})
 				},
 				{

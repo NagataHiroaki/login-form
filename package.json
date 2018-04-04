@@ -6,13 +6,13 @@
   "scripts": {
     "watch:server": "browser-sync start --config bs-config.js",
     "watch:webpack": "webpack -w",
-    "watch:prettier": "onchange \"./src/**/*.{js,scss}\" -- prettier --config ./prettierrc.json --write {{changed}}",
+    "watch:prettier": "onchange \"./src/**/*.{ts,scss}\" -- prettier --config ./prettierrc.json --write {{changed}}",
     "watch:copy": "cpx \"./src/mock/**/*.{html,gif,svg,png,jpg}\" ./dist -w",
     "start": "npm-run-all -p watch:webpack watch:server watch:copy"
   },
   "repository": {},
   "keywords": [],
-  "author": "",
+  "author": "Nagata Hiroaki",
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^7.2.5",

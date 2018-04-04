@@ -1,12 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <link rel="stylesheet" href="/common/css/app.css">
 </head>
+
 <body>
-<div id="app"></div>
+  <div id="app">
+    <button class="foo-button mdc-button">
+      Button
+    </button>
+    <div class="mdc-form-field">
+      <div class="mdc-checkbox">
+        <input type="checkbox" id="my-checkbox" class="mdc-checkbox__native-control" />
+        <div class="mdc-checkbox__background">
+          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+            <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+          </svg>
+          <div class="mdc-checkbox__mixedmark"></div>
+        </div>
+      </div>
+      <label for="my-checkbox" id="my-checkbox-label">This is my checkbox</label>
+    </div>
+  </div>
+  <script src="/common/js/bundle.js"></script>
 </body>
+
 </html>
