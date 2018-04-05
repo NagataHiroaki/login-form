@@ -4,11 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "clean": "del-cli ./dist",
+    "build:webpack": "webpack",
+    "build:copy": "cpx \"./src/mock/**/*.{html,gif,svg,png,jpg}\" ./dist",
+    "build": "npm-run-all -s clean build:webpack build:copy",
     "watch:server": "browser-sync start --config bs-config.js",
     "watch:webpack": "webpack -w",
     "watch:prettier": "onchange \"./src/**/*.{ts,scss}\" -- prettier --config ./prettierrc.json --write {{changed}}",
     "watch:copy": "cpx \"./src/mock/**/*.{html,gif,svg,png,jpg}\" ./dist -w",
-    "start": "npm-run-all -p watch:webpack watch:server watch:copy"
+    "watch": "npm-run-all -p watch:copy watch:server watch:webpack watch:prettier",
+    "start": "npm-run-all -s build watch"
   },
   "repository": {},
   "keywords": [],
@@ -22,6 +27,7 @@
     "browser-sync": "^2.23.6",
     "cpx": "^1.5.0",
     "css-loader": "^0.28.9",
+    "del-cli": "^1.1.0",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.6",
     "node-sass": "^4.7.2",
