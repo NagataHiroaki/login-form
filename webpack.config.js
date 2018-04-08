@@ -64,7 +64,7 @@ module.exports = [
 	},
 	{
 		entry: {
-			'main': TS_PATH + '/main.ts'
+			'main': TS_PATH + '/Main.ts'
 		},
 		output: {
 			path: JS_PATH,

@@ -11,22 +11,48 @@
 
 <body>
   <div id="app">
-    <button class="foo-button mdc-button">
-      Button
-    </button>
-    <div class="mdc-form-field">
-      <div class="mdc-checkbox">
-        <input type="checkbox" id="my-checkbox" class="mdc-checkbox__native-control" />
-        <div class="mdc-checkbox__background">
-          <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
-            <path class="mdc-checkbox__checkmark-path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
-          </svg>
-          <div class="mdc-checkbox__mixedmark"></div>
-        </div>
-      </div>
-      <label for="my-checkbox" id="my-checkbox-label">This is my checkbox</label>
+    <h1>ログインフォーム</h1>
+    <div>
+
+    <div class="radioGroup" id="radioAdmin">
+
+    <div id="parentOfcurrentLoginRadio1">
+    <label for="currentLoginRadio0">ゲスト</label>
+    <input type="radio" id="currentLoginRadio0" name="currentLoginRadio">
     </div>
-  </div>
+
+    <div id="parentOfcurrentLoginRadio1">
+    <label for="currentLoginRadio1">管理者</label>
+    <input type="radio" id="currentLoginRadio1" name="currentLoginRadio">
+    </div>
+
+    </div>
+
+    </div>
+    <div>
+
+    <div id="parentOfid">
+      id
+      <input type="text" id="id">
+      </div>
+
+    </div>
+    <div>
+
+    <div id="parentOfpassword">
+      password
+      <input type="text" id="password">
+      </div>
+
+    </div>
+    <div>
+
+    <div>
+    <button id="loginButton">ログイン</button>
+    </div>
+
+    </div>
+    </div>
   <script src="/common/js/bundle.js"></script>
 </body>
 

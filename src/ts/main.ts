@@ -1,7 +1,25 @@
-// import * as mdc from 'material-components-web';
+// import Button = loginForm.Button;
+import AppModel from './loginForm/model/AppModel';
+import AppController from './loginForm/controller/AppController';
+import ControllerEvent from './loginForm/event/ControllerEvent';
 
-// const checkbox = new mdc.checkbox.MDCCheckbox(document.querySelector('.mdc-checkbox'));
-// const formField = new mdc.formField.MDCFormField(document.querySelector('.mdc-form-field'));
+class Main {
+  constructor() {
+    AppModel.instance.controller = new AppController();
+    let evt: ControllerEvent = new ControllerEvent(
+      ControllerEvent.CHANGE_LOGIN
+    );
+    evt.index = 0;
+    AppModel.instance.controller.dispath(evt);
+    this.onLoad();
+  }
 
-import {MDCRipple} from '@material/ripple';
-const ripple = new MDCRipple(document.querySelector('.foo-button'));
+  onLoad() {}
+}
+
+const init = () => {
+  window.removeEventListener('load', init);
+  new Main();
+};
+
+window.addEventListener('load', init);
